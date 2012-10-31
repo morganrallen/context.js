@@ -24,8 +24,8 @@ Context.prototype = {
     return this.locals[v] ? delete this.locals[v] : false;
   },
 
-  get: function(v) {
-    return (this.lookup(v) || {locals:{}}).locals[v];
+  get: function(v, options) {
+    return (this.lookup(v, options) || {locals:{}}).locals[v];
   },
 
   lookup: function(v, options) {

@@ -12,21 +12,21 @@ var context = new Context;
 
 var x = 1;
 context.define("x", x);
-assert.equal(x, context.lookup("x"));
+assert.equal(x, context.get("x"));
 
 function sub1() {
   context = context.push('sub1');
 
   var y = 2;
   context.define("y", y);
-  assert.equal(y, context.lookup("y"));
+  assert.equal(y, context.get("y"));
 
-  assert.equal(x, context.lookup("x", x));
+  assert.equal(x, context.get("x", x));
 
   // localOnly is mostly just to verify push was done correctly
   // and by correctly I mean the way I don't like
   // I'd prefer just calling push rather that requiring the assignment...
-  assert.equal(undefined, context.lookup("x", {
+  assert.equal(undefined, context.get("x", {
     localOnly: true
   }));
 
@@ -38,16 +38,14 @@ function sub2() {
 
   var z = 3;
   context.define("z", z);
-  assert.equal(z, context.lookup("z"));
+  assert.equal(z, context.get("z"));
 
   context = context.pop();
 }
 
 sub2();
-assert.equal(undefined, context.lookup("y"));
+assert.equal(undefined, context.get("y"));
 sub1();
-assert.equal(undefined, context.lookup("y"));
-sub2();
-console.log(context);
+assert.equal(undefined, context.get("y"));
 
 console.log("PASSED!");
