@@ -9,6 +9,7 @@ Fairly basic functionality at the moment, part of another evolving project.
 
 Use
 ===
+```javascript
 var Context = require("context").Context;
 
 var cx = new Context;
@@ -30,6 +31,7 @@ function derpBurgers() {
 ...
 ...
 derpBurgers();
+```
 
 
 Status
