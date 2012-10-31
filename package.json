@@ -1,0 +1,32 @@
+{
+  "name": "context",
+  "version": "0.0.2",
+  "author": "Morgan 'ARR!' Allen",
+  "description": "Maintain your own stack and scope in JS",
+  "contributors": [
+    {
+      "name": "Morgan 'ARR!' Allen",
+      "email": "morganrallen@gmail.com"
+    } 
+  ],
+  "scripts": {
+    "test": "node test/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "scope",
+    "context"
+  ],
+  "devDependencies" : {
+    "assert": "*",
+    "vows": "*"
+  },
+  "license": "MIT",
+  "engine": {
+    "node": ">=0.6"
+  }
+}
+
