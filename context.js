@@ -29,7 +29,7 @@ Context.prototype = {
         options.localOnly !== true ? this.parent.lookup(v) : undefined;
   },
 
-  pop: function(name) {
+  pop: function() {
     return this.parent;
   },
 
