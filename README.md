@@ -36,4 +36,4 @@ derpBurgers();
 
 Status
 ======
-Works for now, at least what I'm trying to accomplish. Biggest short coming is having to reassign the context instead of just calling push/pop. This will be fixed soon.
+Works for now, at least what I'm trying to accomplish.

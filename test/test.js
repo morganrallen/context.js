@@ -40,6 +40,11 @@ function sub2() {
   context.define("z", z);
   assert.equal(z, context.get("z"));
 
+  assert.notEqual(undefined, context.lookup("derp", {
+    localOnly: true
+  })); // non-existant
+  assert.equal(undefined, context.get("derp")); // non-existant, get undefined value
+
   context = context.pop();
 }
 
