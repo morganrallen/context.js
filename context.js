@@ -4,10 +4,11 @@ var guid = 0;
 function Context() {
   this.guid = guid++;
 
-  this.children = {};
   this.locals = {};
   this.parent = undefined;
   this.root = this;
+
+  this.children = {};
 
   return this;
 };
@@ -23,8 +24,13 @@ Context.prototype = {
     return this.locals[v] ? delete this.locals[v] : false;
   },
 
+  get: function(v) {
+    return (this.lookup(v) || {locals:{}}).locals[v];
+  },
+
   lookup: function(v, options) {
-    return this.locals[v] !== undefined ? this.locals[v] :
+    options = options || {};
+    return this.locals[v] !== undefined ? this :
       this.parent === undefined ? undefined :
         options.localOnly !== true ? this.parent.lookup(v) : undefined;
   },
