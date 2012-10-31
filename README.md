@@ -20,7 +20,7 @@ cx.define("someVar", {
 });
 
 function derpBurgers() {
-  cx = cx.push();
+  cx = cx.push('derpBurgers');
   cx.define("someVar", {
     value: 43,
     location: 0xd34db34a

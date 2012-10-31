@@ -15,7 +15,7 @@ context.define("x", x);
 assert.equal(x, context.lookup("x"));
 
 function sub1() {
-  context = context.push();
+  context = context.push('sub1');
 
   var y = 2;
   context.define("y", y);
@@ -33,8 +33,21 @@ function sub1() {
   context = context.pop();
 }
 
+function sub2() {
+  context = context.push('sub2');
+
+  var z = 3;
+  context.define("z", z);
+  assert.equal(z, context.lookup("z"));
+
+  context = context.pop();
+}
+
+sub2();
 assert.equal(undefined, context.lookup("y"));
 sub1();
 assert.equal(undefined, context.lookup("y"));
+sub2();
+console.log(context);
 
 console.log("PASSED!");
