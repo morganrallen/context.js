@@ -22,6 +22,8 @@
   ],
   "devDependencies" : {
     "assert": "*",
+    "grunt": "*",
+    "jsdoc-toolkit": "*",
     "vows": "*"
   },
   "license": "MIT",

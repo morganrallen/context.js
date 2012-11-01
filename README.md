@@ -37,3 +37,7 @@ derpBurgers();
 Status
 ======
 Works for now, at least what I'm trying to accomplish.
+
+Notes
+=====
+Grunt task docs blatantly stolen from [![jetfuel-grunt-tasks]](https://raw.github.com/peteromano/jetfuel-grunt-tasks) as I don't care to install 14MB is deps for 1.3K of needed code.
