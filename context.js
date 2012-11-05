@@ -35,15 +35,6 @@ Context.prototype = {
   },
 
   /**
-   * Do NOT Use. Not to be trusted.
-   * @param {String} v Variable to be deleted
-   * @returns {True|False} Based on success of deletion
-   */
-  delete: function(v) {
-    return this.locals[v] ? delete this.locals[v] : false;
-  },
-
-  /**
    * Get variable VALUE from nearest Context up the stack
    * @param {String} v Name of variable to get value of.
    * @param {Object} options Optional params for current get
